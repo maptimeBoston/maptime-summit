@@ -3,360 +3,158 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Shaun Walbridge / @scw" />
-  <title>Spatial Data Formats</title>
+  <meta name="author" content="Jake Wasserman / @jwass2000" />
+  <meta name="author" content="Andy Woodruff / @awoodruff" />
+  <meta name="author" content="Mike Foster / @mjfoster83" />
+  <title>Maptime Boston 1st Year Retrospective</title>
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css"/>
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; background-color: #303030; color: #cccccc; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
-td.sourceCode { padding-left: 5px; }
-pre, code { color: #cccccc; background-color: #303030; }
-code > span.kw { color: #f0dfaf; }
-code > span.dt { color: #dfdfbf; }
-code > span.dv { color: #dcdccc; }
-code > span.bn { color: #dca3a3; }
-code > span.fl { color: #c0bed1; }
-code > span.ch { color: #dca3a3; }
-code > span.st { color: #cc9393; }
-code > span.co { color: #7f9f7f; }
-code > span.ot { color: #efef8f; }
-code > span.al { color: #ffcfaf; }
-code > span.fu { color: #efef8f; }
-code > span.er { color: #c3bf9f; }
-  </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/night.css" id="theme">
-  <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-  <script>
-    if( window.location.search.match( /print-pdf/gi ) ) {
-      var link = document.createElement( 'link' );
-      link.rel = 'stylesheet';
-      link.type = 'text/css';
-      link.href = 'reveal.js/css/print/pdf.css';
-      document.getElementsByTagName( 'head' )[0].appendChild( link );
-    }
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
-  <style type="text/css">
-      .reveal pre.sourceCode {
-          line-height: 1.5em;
-          font-size: 0.65em;
+  <link rel="stylesheet" href="reveal.js/css/reveal.min.css"/>
+    <style type="text/css">code{white-space: pre;}</style>
+    <link rel="stylesheet" href="reveal.js/css/theme/simple.css" id="theme">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
       }
-  
-      .reveal a {
-          color: #78dcfd;
-      }
-  
-      .reveal h1 {
-          font-weight: bold;
-          font-size: 3.0em;
-      }
-  
-      .reveal h2.author {
-          text-align: left;
-      }
-      .reveal h1.title {
-          text-align: left;
-          font-size: 2.7em;
-      } 
-  </style>
+    </script>
+    <!--[if lt IE 9]>
+    <script src="reveal.js/lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        .reveal pre.sourceCode {
+            line-height: 1.5em;
+            font-size: 0.65em;
+        }
+    
+        .reveal a {
+            color: #78dcfd;
+        }
+    
+        .reveal h1 {
+            font-weight: bold;
+            font-size: 3.0em;
+        }
+    
+        .reveal h2.author {
+            text-align: left;
+        }
+        .reveal h1.title {
+            text-align: left;
+            font-size: 2.7em;
+        } 
+    </style>
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
 <section>
-    <h1 class="title">Spatial Data Formats</h1>
-    <h2 class="author"><small><a href="http://shaunwalbridge.com">Shaun Walbridge</a> / <a href="https://twitter.com/scw"><span class="citation" data-cites="scw">@scw</span></a></small></h2>
-    <h3 class="date"><small><a href="https://twitter.com/MaptimeBoston">MaptimeBOS</a> — 2015-03-18</small></h3>
+    <h1 class="title">Maptime Boston<br> 1st Year Retrospective</h1>
+    <h2 class="author"><small>Jake Wasserman / <a href="https://twitter.com/jwass2000"><span class="citation" data-cites="jwass2000">@jwass2000</span></a></small></h2>
+    <h2 class="author"><small>Andy Woodruff / <a href="https://twitter.com/awoodruff"><span class="citation" data-cites="awoodruff">@awoodruff</span></a></small></h2>
+    <h2 class="author"><small>Mike Foster / <a href="https://twitter.com/mjfoster83"><span class="citation" data-cites="mjfoster83">@mjfoster83</span></a></small></h2>
+    <h3 class="date"><small>Maptime Summit — 2015-06-08</small></h3>
 </section>
 
-<section id="download-the-repo" class="slide level1">
-<h1>Download the repo</h1>
-<h3>
-<a href="https://github.com/scw/maptime-data-formats-2015">https://github.com/scw/maptime-data-formats-2015/</a>
-</h3>
+<section id="history" class="slide level1">
+<h1>History</h1>
+<ul>
+<li>Jake met Lyzi @ SOTMUS 2014</li>
+<li>Jake, Andy, Mike separately discussed having non-technical Boston geo meetup</li>
+<li>Lyzi, Beth, Alan sent onboarding materials</li>
+<li>Kickoff 6/25/2014</li>
+<li>1 year anniversary this month!</li>
+</ul>
 </section>
-<section id="section" class="slide level1" data-background="images/halpern-2008.png">
+<section id="the-meetups" class="slide level1">
+<h1>The Meetups</h1>
+<ul>
+<li>One per month</li>
+<li>Each event starts with brief Maptime overview - quotes from maptime.io/about and lyzidiamond.com/posts/why-maptime</li>
+<li>Try to encourage participation, asking questions, etc</li>
+<li>Speakers generally target ~30 min of material</li>
+</ul>
+</section>
+<section id="the-tutorials" class="slide level1">
+<h1>The Tutorials</h1>
+<table>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Anatomy of a Web Map</td>
+<td style="text-align: left;">OSM 101</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">QGIS (Mike invents the #ratmap)</td>
+<td style="text-align: left;">Leaflet</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Github for geo-data</td>
+<td style="text-align: left;">Show-and-Tell</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Holiday Potluck</td>
+<td style="text-align: left;">CartoDB</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D3</td>
+<td style="text-align: left;">Spatial Data Formats and Data Sources</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Projections and Coordinate Systems</td>
+<td style="text-align: left;">Mapbox Studio and CartoCSS</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-people" class="slide level1">
+<h1>The People</h1>
+<ul>
+<li>Cartographers, programmers, GIS analysts/researchers, data scientists, local government GIS engineers, journalists, graduate students (operations research, linguistics, MBA), OSM enthusiasts, hobbyists</li>
+<li>Broad age range</li>
+<li>Between 15-30 people at each meetup</li>
+</ul>
+</section>
+<section id="the-space" class="slide level1">
+<h1>The Space</h1>
+<ul>
+<li>Meet in an open cafe area</li>
+<li>Large picnic style table that seats ~12 people plus number of smaller tables that seat 3-4.</li>
+<li>Reserved every 3rd Wednesday through end of 2015 :)</li>
+</ul>
+</section>
+<section id="section" class="slide level1" data-background="images/fourth-floor-kitchen.jpg">
 <h1></h1>
 </section>
-<section id="impacts-of-shipping" class="slide level1">
-<h1>Impacts of Shipping</h1>
-<p><img src="images/cargo-vessels-thesis.png" style="border: none" /></p>
-</section>
-<section id="job" class="slide level1">
-<h1>Job</h1>
-<ul>
-<li>Work at <a href="https://www.esri.com">Esri</a> on GIS software for scientific applications</li>
-<li>Python and R</li>
-<li>GIS company since 1969, makes things like ArcGIS</li>
-</ul>
-</section>
-<section id="ive-got-plenty-of-data-types-thanks" class="slide level1">
-<h1>I've got plenty of data types, thanks</h1>
-<p>Many existing <a href="https://en.wikipedia.org/wiki/Data_type">data types</a>:</p>
-<p><code>float</code> - <code>int</code> - <code>char</code> - <code>string</code> - <code>timestamp</code></p>
-<div class="fragment">
-<p>Can't we just make it with these data types?</p>
-</div>
-</section>
-<section id="good-ol-csv-nothing-beats-csv" class="slide level1">
-<h1>Good Ol' CSV, Nothing Beats CSV</h1>
-<p>Comma Separated Values</p>
-<pre><code>name, type, latitude, longitude
-BU Bridge, bridge, 42.353, -71.1106
-Prudential Tower, skyscraper, 42.347, -71.082
-&#39;That place where we measured 108.6&quot; of snow&#39;, airport, 42.3605, -71.006638</code></pre>
-<div class="fragment">
-<ul>
-<li>A simple tabular structure to store data — spreadsheet, without the cruft</li>
-<li>Can upload this data to web mapping sites, or use with something like <a href="https://www.gdal.org">GDAL</a> to convert it to other formats.</li>
-</ul>
-</div>
-</section>
-<section id="gdal-interlude" class="slide level1">
-<h1>GDAL Interlude</h1>
-<p>GDAL: translate spatial data between formats.</p>
-<ul>
-<li>OS X: <code>brew install gdal</code></li>
-<li>Ubuntu/Debian: <code>apt-get install gdal</code></li>
-<li>Windows: <span style="text-decoration: line-through">You're SOL</span> try <a href="http://www.gisinternals.com/release.php">these binaries</a> or <a href="http://trac.osgeo.org/osgeo4w/">OSGeo4W</a>.</li>
-</ul>
-<div class="fragment">
-<p>Everyone uses it, you should too!</p>
-</div>
-</section>
-<section id="convert-our-csv" class="slide level1">
-<h1>Convert Our CSV</h1>
-<pre><code>cd data/
-# ogr2ogr is confusingly &lt;OUTPUT NAME&gt; &lt;INPUT NAME&gt;
-ogr2ogr -f &quot;GeoJSON&quot; locations.geojson locations.csv</code></pre>
-</section>
-<section id="section-1" class="slide level1" data-background="images/bad-geojson.png">
-<h1></h1>
-<p style="color: black">
-<em>World's tiniest trumpet</em> — doesn't work. Why? GDAL wants to know: Which columns are our spatial data? How are they registered to the surface of the earth?
-</p>
-</section>
-<section id="convert-our-csv-1" class="slide level1">
-<h1>Convert Our CSV</h1>
-<pre class="sourceCode xml"><code class="sourceCode xml"><span class="kw">&lt;OGRVRTDataSource&gt;</span>
-    <span class="kw">&lt;OGRVRTLayer</span><span class="ot"> name=</span><span class="st">&quot;locations&quot;</span><span class="kw">&gt;</span>
-        <span class="kw">&lt;SrcDataSource&gt;</span>locations.csv<span class="kw">&lt;/SrcDataSource&gt;</span>
-        <span class="kw">&lt;GeometryType&gt;</span>wkbPoint<span class="kw">&lt;/GeometryType&gt;</span>
-        <span class="kw">&lt;LayerSRS&gt;</span>WGS84<span class="kw">&lt;/LayerSRS&gt;</span>
-        <span class="kw">&lt;GeometryField</span><span class="ot"> encoding=</span><span class="st">&quot;PointFromColumns&quot;</span><span class="ot"> x=</span><span class="st">&quot;longitude&quot;</span><span class="ot"> y=</span><span class="st">&quot;latitude&quot;</span><span class="kw">/&gt;</span>
-    <span class="kw">&lt;/OGRVRTLayer&gt;</span>
-<span class="kw">&lt;/OGRVRTDataSource&gt;</span></code></pre>
-<div class="fragment">
-<p>Let's try that again:</p>
-<pre><code>ogr2ogr -f &quot;GeoJSON&quot; locations.geojson locations.csv</code></pre>
-<p><a href="https://github.com/scw/maptime-data-formats-2015/blob/master/data/locations.geojson">Results</a></p>
-</div>
-</section>
-<section id="csv-to-geojson" class="slide level1">
-<h1>CSV to GeoJSON</h1>
-<p>Simpler ways:</p>
-<ul>
-<li><a href="http://togeojson.com/">CSV to GeoJSON</a></li>
-<li><a href="https://geojson.io">GeoJSON.io</a></li>
-</ul>
-<p>So what's all this XML? I thought we were just making a point?</p>
-<ul>
-<li>GDAL wants to know where to put the data (shh, <em>projections</em>)</li>
-<li>It also knows how to handle higher order data -- data that doesn't fit as well into our simple column model that works fine for points.</li>
-</ul>
-</section>
-<section id="spatial-data-formats" class="slide level1">
-<h1>Spatial Data Formats</h1>
-<p>Want data <em>formats</em> that let us store geometric information. We have an attribute model, like the CSV, but want an additional &quot;entity&quot; model to store the geographic information.</p>
-<ul>
-<li>0D: Point</li>
-<li>1D: Line</li>
-<li>2D: Area</li>
-<li>3D: Solid</li>
-<li>4D: Space-time</li>
-<li><a href="images/entity-models.png">With images</a></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Can't easily cram these into a tabular structure</li>
-<li>'Vector' data</li>
-</ul>
-</div>
-</section>
-<section id="bigger-than-spatial" class="slide level1">
-<h1>Bigger Than Spatial</h1>
-<p><img src="images/db-query.jpg" style="border: none" /></p>
-<p>Source: <a href="http://www.springer.com/computer/theoretical+computer+science/book/978-3-540-77973-5">Computational Geometry: Algorithms and Applications</a></p>
-</section>
-<section id="simple-features-model" class="slide level1">
-<h1>Simple Features Model</h1>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Simple_Features">An OGC specification</a> for representing geometries</li>
-<li><p>Geometries bring their own edge cases:</p>
-<ul>
-<li>WKT Example: <code>POLYGON((0 0, 10 10, 0 10, 10 0, 0 0))</code></li>
-</ul></li>
-</ul>
-<figure>
-<img src="images/self_int.png" />
-</figure>
-</section>
-<section id="shapefile" class="slide level1">
-<h1>Shapefile</h1>
-<ul>
-<li>Open specification, 1996 (<a href="http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf">Whitepaper</a>, <a href="http://en.wikipedia.org/wiki/Shapefile">Wikipedia</a>)</li>
-<li>Historically the langua-franca for exchanging vector data</li>
-<li>A collection of sidecar files (<code>.shp, .shx, .dbf</code>) plus some optional extras (<code>.prj</code>, <code>.sbn</code>, ...)</li>
-<li>Stores attribues in a DBF file, entity data in two parts:
-<ul>
-<li><code>.shp</code> contains the shapes themselves (in binary)</li>
-<li><code>.shx</code> contains the index to look up shape locations in the <code>.shp</code></li>
-</ul></li>
-</ul>
-</section>
-<section id="shapefile-1" class="slide level1">
-<h1>Shapefile</h1>
-<ul>
-<li>Pros:
-<ul>
-<li>fast, ubiquitous, file-based means easy streaming, includes an index (usually quadtree) for fast lookup</li>
-</ul></li>
-<li>Cons:
-<ul>
-<li>Record offset is a <code>16-bit int</code>, so only 2GB files</li>
-<li>Only one <em>spatial type</em> per file</li>
-<li>The attribute model</li>
-</ul></li>
-<li>Remember: attribute model (our table) + entity data (the shapes)</li>
-<li>Attributes are '<a href="http://en.wikipedia.org/wiki/DBase">dBase</a>': the cutting edge format of 1988.
-<ul>
-<li>limited column names</li>
-<li>spreadsheet software hates it</li>
-</ul></li>
-</ul>
-</section>
-<section id="shapefile-2" class="slide level1">
-<h1>Shapefile</h1>
-<pre><code># default output of OGR is a shapefile, no `-f format` needed
-ogr2ogr locations.shp locations.vrt</code></pre>
-<ul>
-<li>Knows about this 'projection' thing</li>
-<li>A variety of other traits that makes it great as a data storage format</li>
-<li>But it's domain specific, so no broader ecosystem</li>
-</ul>
-</section>
-<section id="section-2" class="slide level1" data-background="images/shapefile.png">
+<section id="section-1" class="slide level1" data-background="images/collaborate.jpg">
 <h1></h1>
 </section>
-<section id="geojson" class="slide level1">
-<h1>GeoJSON</h1>
+<section id="difficulties" class="slide level1">
+<h1>Difficulties</h1>
 <ul>
-<li>A community driven effort to create an agnostic JSON specification which can easily encode geometries (again, our attribute + entity model).</li>
-<li><a href="http://geojson.org" class="uri">http://geojson.org</a></li>
-<li>Spec created in 2008, but really has taken off in the past 3 years -- confluence of awesome.</li>
-<li><a href="http://www.ietf.org/id/draft-butler-geojson-05.txt">Submitted to IETF</a></li>
-<li><code>JSON</code> has a massive ecosystem! Spatial is always better when it bootstraps the existing technology ecosystem</li>
+<li>Of our 10 tutorials, 7 led by organizers - unsustainable</li>
+<li>How often to repeat while maintaining interest?</li>
 </ul>
 </section>
-<section id="geojson-1" class="slide level1">
-<h1>GeoJSON</h1>
+<section id="looking-back" class="slide level1">
+<h1>Looking Back</h1>
 <ul>
-<li>Our same entity + attribute model, but now with JSON!</li>
+<li>Being an organizer is a lot of work</li>
+<li>It's been fun!</li>
+<li>It's been good for the community</li>
 </ul>
-<pre class="sourceCode json"><code class="sourceCode json"><span class="fu">{</span>
-<span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;FeatureCollection&quot;</span><span class="fu">,</span>
-<span class="dt">&quot;crs&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;name&quot;</span><span class="fu">,</span> <span class="dt">&quot;properties&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;urn:ogc:def:crs:OGC:1.3:CRS84&quot;</span> <span class="fu">}</span> <span class="fu">},</span>
-                                                                                
-<span class="dt">&quot;features&quot;</span><span class="fu">:</span> <span class="ot">[</span>
-<span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Feature&quot;</span><span class="fu">,</span> <span class="dt">&quot;properties&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;BU Bridge&quot;</span><span class="fu">,</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;bridge&quot;</span><span class="fu">,</span> <span class="dt">&quot;latitude&quot;</span><span class="fu">:</span> <span class="st">&quot;42.353&quot;</span><span class="fu">,</span> <span class="dt">&quot;longitude&quot;</span><span class="fu">:</span> <span class="st">&quot;-71.1106&quot;</span> <span class="fu">},</span> <span class="dt">&quot;geometry&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Point&quot;</span><span class="fu">,</span> <span class="dt">&quot;coordinates&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="fl">-71.1106</span><span class="ot">,</span> <span class="fl">42.353</span> <span class="ot">]</span> <span class="fu">}</span> <span class="fu">}</span><span class="ot">,</span>
-<span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Feature&quot;</span><span class="fu">,</span> <span class="dt">&quot;properties&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;Prudential Tower&quot;</span><span class="fu">,</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;skyscraper&quot;</span><span class="fu">,</span> <span class="dt">&quot;latitude&quot;</span><span class="fu">:</span> <span class="st">&quot;42.347&quot;</span><span class="fu">,</span> <span class="dt">&quot;longitude&quot;</span><span class="fu">:</span> <span class="st">&quot;-71.082&quot;</span> <span class="fu">},</span> <span class="dt">&quot;geometry&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Point&quot;</span><span class="fu">,</span> <span class="dt">&quot;coordinates&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="fl">-71.082</span><span class="ot">,</span> <span class="fl">42.347</span> <span class="ot">]</span> <span class="fu">}</span> <span class="fu">}</span><span class="ot">,</span>
-<span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Feature&quot;</span><span class="fu">,</span> <span class="dt">&quot;properties&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;That place where we measured 109in of snow&quot;</span><span class="fu">,</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;airport&quot;</span><span class="fu">,</span> <span class="dt">&quot;latitude&quot;</span><span class="fu">:</span> <span class="st">&quot;42.3605&quot;</span><span class="fu">,</span> <span class="dt">&quot;longitude&quot;</span><span class="fu">:</span> <span class="st">&quot;-71.006638&quot;</span> <span class="fu">},</span> <span class="dt">&quot;geometry&quot;</span><span class="fu">:</span> <span class="fu">{</span> <span class="dt">&quot;type&quot;</span><span class="fu">:</span> <span class="st">&quot;Point&quot;</span><span class="fu">,</span> <span class="dt">&quot;coordinates&quot;</span><span class="fu">:</span> <span class="ot">[</span> <span class="fl">-71.006638</span><span class="ot">,</span> <span class="fl">42.3605</span> <span class="ot">]</span> <span class="fu">}</span> <span class="fu">}</span>
-<span class="ot">]</span>
-<span class="fu">}</span></code></pre>
-</section>
-<section id="non-planar-datasets" class="slide level1">
-<h1>Non-Planar Datasets</h1>
-<ul>
-<li>Shapefiles &amp; GeoJSON are non-planar formats, a.k.a. spaghetti:</li>
-</ul>
-<figure>
-<img src="images/osm_spaghetti.png" />
-</figure>
-<p><a href="http://commons.wikimedia.org/wiki/File:OSM_knooppunt_Birmingham_-_spaghetti_junction.png">Wikipedia; GDFL</a></p>
-<ul>
-<li>What you want in 98% of cases, but when you don't...</li>
-</ul>
-</section>
-<section id="topological-datasets" class="slide level1">
-<h1>Topological Datasets</h1>
-<ul>
-<li>What's a topological dataset?</li>
-<li><a href="http://gis.stackexchange.com/questions/178/simplifying-adjacent-polygons">GIS.SE answer</a></li>
-<li>Support in GRASS, PostGIS, ArcGIS (<code>E00</code>, parcel fabric) and now, with TopoJSON</li>
-</ul>
-</section>
-<section id="topojson" class="slide level1">
-<h1>TopoJSON</h1>
-<ul>
-<li>Last Maptime, Andy gave us a great demo of D3 — <a href="https://en.wikipedia.org/wiki/GeoJSON#TopoJSON">TopoJSON</a> also created by <a href="http://bost.ocks.org/mike/">Mike Bostock</a> (plus our very own <a href="http://calvinmetcalf.com/">Calvin Metcalf</a>)</li>
-<li>I'm hoping Calvin is here to represent</li>
-<li><a href="https://github.com/topojson/topojson-specification/blob/master/README.md">The Spec</a></li>
-</ul>
-</section>
-<section id="topojson-1" class="slide level1">
-<h1>TopoJSON</h1>
-<ul>
-<li>Supports transforms and quantization</li>
-<li>Primarily intended as a <em>data visualization</em> format -- throws out data where it doesn't help make a good image at the scale of a D3 canvas.</li>
-</ul>
-</section>
-<section id="files-are-no-fun-what-about-databases" class="slide level1">
-<h1>Files are no fun, what about databases?</h1>
-<p><a href="http://postgis.net/">PostGIS</a>, <a href="http://www.geopackage.org/">GeoPackage</a> (SQLite), <a href="https://msdn.microsoft.com/en-us/library/bb933790.aspx">SQL Server</a>, <a href="http://www.esri.com/products/arcgis-capabilities/data-management">Esri Geodatabase</a>, ...</p>
-<ul>
-<li>Everyone can take advantage of spatial data, so its becoming a primative type in most database engines</li>
-<li>Some engines (e.g. PostGIS, GDB) on more of the problem space</li>
-</ul>
-</section>
-<section id="attributes-entities-magic" class="slide level1">
-<h1>Attributes + Entities == Magic!</h1>
-</section>
-<section id="neat-examples" class="slide level1">
-<h1>Neat examples</h1>
-<p>Data Formats + Computational Geometry:</p>
-<p><a href="https://source.opennews.org/en-US/articles/introducing-wherewolf/">Wherewolf</a></p>
-<p>Koop: Expose Open Data as GeoJSON and Feature Services:</p>
-<p><a href="https://github.com/Esri/koop" class="uri">https://github.com/Esri/koop</a></p>
-</section>
-<section id="thanks" class="slide level1">
-<h1>Thanks</h1>
-<ul>
-<li>Maptime Boston</li>
-<li>CartoDB for the pizza</li>
-<li>Esri for paying me to nerd out on geospatial</li>
-</ul>
-</section>
-<section id="bonus-format-geojakeson" class="slide level1">
-<h1>BONUS FORMAT: GeoJakeSON</h1>
-<figure>
-<img src="images/geojakeson.png" />
-</figure>
 </section>
     </div>
   </div>
 
 
   <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="reveal.js/js/reveal.min.js"></script>
 
   <script>
 
