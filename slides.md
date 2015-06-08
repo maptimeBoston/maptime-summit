@@ -65,6 +65,6 @@ Difficulties
 
 Looking Back
 =======
-- It's been good for the community
+- It's been good for the community (we think)
 - Being an organizer is a lot of work
 - It's been fun!
