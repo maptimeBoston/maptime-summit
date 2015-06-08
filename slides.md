@@ -21,6 +21,7 @@ The Meetups
   and lyzidiamond.com/posts/why-maptime
 - Try to encourage participation, asking questions, etc
 - Speakers generally target ~30 min of material
+- Post slides to Meetup list
 
 
 The Tutorials
@@ -61,6 +62,7 @@ Difficulties
 ============
 - Of our 10 tutorials, 7 led by organizers - unsustainable
 - How often to repeat while maintaining interest?
+- Stagnant chapter website
 
 
 Looking Back
